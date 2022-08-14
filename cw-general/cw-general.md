@@ -1,22 +1,30 @@
-# CosmWasm general commands
+# CosmWasm General
 
 **Table of Contents**
 
-- ### CONTRACT DEPLOYMENT
-  - Basics of the workflow
-  - Build & Optimize a contract
-  - Upload a contract to the blockchain
-  - Instantiate a contract
-  - Execute a contract
-  - Query a contract
+- ### [CONTRACT DEPLOYMENT](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#--contract-deployment--)
+  - [Basics of the workflow](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#basics-of-the-workflow)
+  - [Build & Optimize a contract](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#building--optimizing-a-contract-using-rust-optimizer)
+  - [Upload a contract to the blockchain](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#uploading-your-contract-to-a-blockchain)
+  - [Instantiate a contract](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#instantiating-your-contract)
+  - [Execute a contract](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#executing-your-contract)
+  - [Query a contract](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#querying-your-contract)
 - ### MISC
-  - jq
+  - [jq](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#using-jq-to-better-format-output-of-commands)
+
+</br>
 
 ---
+
+</br>
+
 ---
+
+</br>
+
 ---
----
----
+
+</br>
 
 # ~-~ CONTRACT DEPLOYMENT ~-~
 
@@ -186,6 +194,8 @@ Finally, let's query your contract to get some info about it's state
 ```bash
 junod query wasm contract-state smart <YOUR CONTRACT ADDRESS> '{"get_count": {}}'
 ```
+
+</br>
 
 ---
 
