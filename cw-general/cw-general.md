@@ -4,7 +4,7 @@
 
 - ### [CONTRACT DEPLOYMENT](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#--contract-deployment--)
   - [Basics of the workflow](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#basics-of-the-workflow)
-  - [Build & Optimize a contract](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#building--optimizing-a-contract-using-rust-optimizer)
+  - [Build/Optimize a contract](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#building--optimizing-a-contract-using-rust-optimizer)
   - [Upload a contract to the blockchain](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#uploading-your-contract-to-a-blockchain)
   - [Instantiate a contract](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#instantiating-your-contract)
   - [Execute a contract](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#executing-your-contract)
@@ -30,12 +30,12 @@
 
 # Basics of the workflow
 
-1. **Write your smart contract (Guide on getting started: [Callum/zero-to-hero](https://github.com/Callum-A/cosmwasm-zero-to-hero))**
-2. **Build & Optimize your contract**
-3. **Upload your contract to a blockchain**
-4. **Instantiate your contract**
-5. **Execute your contract**
-6. **Query your contract**
+1. **Write your smart contract (Guide on getting started - [Callum/zero-to-hero](https://github.com/Callum-A/cosmwasm-zero-to-hero))**
+2. [**Build/Optimize your contract**](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#building--optimizing-a-contract-using-rust-optimizer)
+3. [**Upload your contract to a blockchain**](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#uploading-your-contract-to-a-blockchain)
+4. [**Instantiate your contract**](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#instantiating-your-contract)
+5. [**Execute your contract**](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#executing-your-contract)
+6. [**Query your contract**](https://github.com/LeTurt333/cosmos-notebook/blob/main/cw-general/cw-general.md#querying-your-contract)
 
 </br>
 
@@ -44,7 +44,7 @@
 
 </br>
 
-# Building & Optimizing a contract (using [Rust Optimizer](https://github.com/CosmWasm/rust-optimizer))
+# Building/Optimizing a contract (using [Rust Optimizer](https://github.com/CosmWasm/rust-optimizer))
 
 - Prerequisite: Install [Docker](https://docs.docker.com/engine/install/)
 
@@ -65,7 +65,7 @@ docker run --rm -v "$(pwd)":/code \
   cosmwasm/rust-optimizer:0.12.6
 ```
 
-4. This will create a new folder `contract_repo/artifacts` that will contain your optimized contract `/artifacts/mycontract.wasm`
+4. This will create a new folder `contract_repo/artifacts` that will contain your optimized contract binary `/artifacts/mycontract.wasm`
 
 </br>
 
