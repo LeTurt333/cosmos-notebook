@@ -1,4 +1,4 @@
-# Insert Great Name
+# Cosmos Notebook
 
 This is sort of a personal notebook for dev stuff across the Cosmos
 
