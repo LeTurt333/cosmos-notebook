@@ -97,3 +97,31 @@ You can also get multiple items from the map by using `.range`
 `.range` takes in storage, MIN, MAX, and order
 
 - If order = `Order::Ascending`, items returned will be ordered **Most recent -> Oldest**
+
+
+# Getting an wallet's token balance (Native & Cw20)
+
+**Native**
+```rust
+let resp: Coin = deps.querier.query_balance(user_wallet, "ujuno")?;
+
+let user_amount = resp.amount;
+```
+
+**CW20**
+```rust
+let resp: BalanceResponse = deps
+    .querier
+    .query(&QueryRequest::Wasm(
+        WasmQuery::Smart{ 
+            contract_addr: cw20_contract, 
+            msg: to_binary(&format!("Balance {{ address: {} }}", wrapper.sender))?}
+    ))?;
+
+let coin_resp: Coin = resp.amount;
+```
+
+
+
+# IM
+
