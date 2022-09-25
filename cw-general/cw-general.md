@@ -44,7 +44,7 @@
 
 </br>
 
-# Building/Optimizing a contract (using [Rust Optimizer](https://github.com/CosmWasm/rust-optimizer))
+# Building/Optimizing a contract (using [Rust Optimizer](https://github.com/CosmWasm/rust-optimizer) / [Workspace Optimizer](https://github.com/CosmWasm/rust-optimizer/blob/e5594e11a1973702b2fb4cd4e4fe9f17ccdb7df3/README.md#mono-repos))
 
 - Prerequisite: Install [Docker](https://docs.docker.com/engine/install/)
 
@@ -57,12 +57,20 @@
 name@computer:/home/contract-repo
 ```
 
-3. And run this command
+3. If you're compiling a ***single*** contract, run this command
 ```bash
 docker run --rm -v "$(pwd)":/code \
   --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
   --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
   cosmwasm/rust-optimizer:0.12.6
+```
+
+31. If you're compiling a ***workspace of multiple contracts*** (like cw-plus), run this command
+```bash
+docker run --rm -v "$(pwd)":/code \
+  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
+  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
+  cosmwasm/workspace-optimizer:0.12.8
 ```
 
 4. This will create a new folder `contract_repo/artifacts` that will contain your optimized contract binary `/artifacts/mycontract.wasm`
