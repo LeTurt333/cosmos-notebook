@@ -5,6 +5,10 @@
 
 - I find that using Struct Variants in my Init/Execute/Query functions saves me a lot of hassle when working with TypeScript/JavaScript on the Front End
 
+- 2 notes on this:
+- 1 If you're using a tool like [TS-Codegen](https://github.com/CosmWasm/ts-codegen) this doesn't *really* make any difference since ts-codegen will generate the types for you
+- 2 If your contract implements the [cw20 receiver interface](https://github.com/CosmWasm/cw-plus/blob/main/packages/cw20/README.md#receiver), don't follow this for your `receive` message type to save yourself a major headache...
+
 - **Instead of doing something like this**
 ```rust
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
@@ -51,8 +55,9 @@ keeps me from needing to mess around with serde tags
 
 ---
 ---
+Ignore the following, incomplete
 
-# Getting storage data from a map: in prog
+# Incomplete-- Getting storage data from a map
 
 - If you are using storing data within a `Map`, CosmWasm has multiple tools to get data from that map
 
@@ -97,31 +102,3 @@ You can also get multiple items from the map by using `.range`
 `.range` takes in storage, MIN, MAX, and order
 
 - If order = `Order::Ascending`, items returned will be ordered **Most recent -> Oldest**
-
-
-# Getting an wallet's token balance (Native & Cw20)
-
-**Native**
-```rust
-let resp: Coin = deps.querier.query_balance(user_wallet, "ujuno")?;
-
-let user_amount = resp.amount;
-```
-
-**CW20**
-```rust
-let resp: BalanceResponse = deps
-    .querier
-    .query(&QueryRequest::Wasm(
-        WasmQuery::Smart{ 
-            contract_addr: cw20_contract, 
-            msg: to_binary(&format!("Balance {{ address: {} }}", wrapper.sender))?}
-    ))?;
-
-let coin_resp: Coin = resp.amount;
-```
-
-
-
-# IM
-
