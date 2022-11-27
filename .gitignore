@@ -4,6 +4,9 @@
 
 /cosmjs
 
+/contract-design-patterns/messages.md
+/contract-design-patterns/get-balance-in-contractx.md
+
 
 .DS_Store
 Thumbs.db
